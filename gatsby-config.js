@@ -3,5 +3,5 @@ module.exports = {
     title: `al-portfolio-v2`,
     siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: [],
+  plugins: [`gatsby-plugin-image`,`gatsby-plugin-sharp`],
 }

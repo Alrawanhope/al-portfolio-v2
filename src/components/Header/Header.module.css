@@ -1,0 +1,154 @@
+:root {
+    --primaryColor: "#2ECC71";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+header {
+    padding: 1rem 25px 0px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+}
+
+.headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0px 1px #dfdfdf;
+    /* position: relative; */
+}
+
+.headerContainer a {
+    text-decoration: none;
+    color: black;
+}
+
+.headerContainer ul {
+    list-style: none;
+}
+
+.headerLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+}
+
+.headerLogo img {
+    width: 80%;
+}
+
+.headerContainer .headerDesktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.headerContainer li {
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.headerContainer li:hover {
+    transition: 0.4s;
+    color: #0FC059;
+}
+
+#headerButton a {
+    padding: 0.8rem 1.6rem;
+    border-radius: 50px;
+    border: 1px solid #0FC059;
+    color: #0FC059;
+}
+
+#headerButton a:hover {
+    background-color: #0FC059;
+    color: white;
+    transition: 0.4s;
+}
+
+.headerHandburger {
+    margin: auto 0;
+    display: none;
+    cursor: pointer;
+}
+
+.headerHandburger div {
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.headerOpen .headerBar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.headerOpen .headerBar2 {
+    opacity: 0;
+}
+
+.headerOpen .headerBar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, -8px);
+    transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.headerOpen .headerMobile {
+    display: block;
+    width: 100%;
+    background-color: white;
+    padding: 0px 25px;
+    height: auto;
+}
+
+.headerOpen .headerMobile ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0px 1px #dfdfdf;
+    padding-top: 1rem;
+}
+
+.headerMobile {
+    display: none;
+    position: absolute;
+    top: 93%;
+    left: 0%;
+}
+
+.headerMobile li {
+    margin-bottom: 15px;
+}
+
+.headerMobile hr {
+    opacity: 0.3;
+}
+
+@media (max-width:768px) {
+
+    .headerLogo img {
+        width: 60%;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .headerHandburger {
+        display: block;
+    }
+}

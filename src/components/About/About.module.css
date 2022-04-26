@@ -1,0 +1,257 @@
+:root {
+    --primaryColor: "#2ECC71";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+
+.aboutWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutTitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem 1rem 0;
+    font-size: 2.5rem;
+    border-bottom: 5px solid black;
+}
+
+.aboutRowContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 10px;
+}
+
+.aboutRowChild {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+
+.aboutRowChild div {
+    background-color: #2ECC71;
+    width: 10rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+
+.aboutRowChild h2 {
+    padding: 1rem 0.5rem 0.5rem;
+    opacity: 0.8;
+}
+
+.aboutRowChild p {
+    opacity: 0.8;
+    font-size: 1rem;
+    max-width: 60%;
+    text-align: center;
+}
+
+/* ================== */
+.aboutRowContainer2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 2rem;
+}
+
+.aboutInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+}
+
+.aboutImage {
+    width: 12rem;
+}
+
+.aboutInfo h2 {
+    padding-top: 1rem;
+}
+
+.aboutInfo p {
+    max-width: 70%;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    padding: 1rem;
+}
+
+
+
+/* ================== */
+
+.aboutProgressBar {
+    align-self: flex-start;
+    width: 50%;
+    padding: 2rem 5px;
+}
+
+.aboutPercentage {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.aboutPercentage div:nth-child(1) {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    width: 6rem;
+}
+
+.aboutHtml div:nth-child(2) {
+    width: 70%;
+    height: 2rem;
+    background-color: rgb(15, 228, 103);
+}
+
+.aboutCss div:nth-child(2) {
+    width: 70%;
+    height: 2rem;
+    background-color: rgb(15, 228, 103);
+}
+
+.aboutJs div:nth-child(2) {
+    width: 65%;
+    height: 2rem;
+    background-color: rgb(15, 228, 103);
+}
+
+.aboutReact div:nth-child(2) {
+    width: 60%;
+    height: 2rem;
+    background-color: rgb(15, 228, 103);
+}
+
+.aboutNode div:nth-child(2) {
+    width: 50%;
+    height: 2rem;
+    background-color: rgb(15, 228, 103);
+}
+
+.aboutGatsby div:nth-child(2) {
+    width: 60%;
+    height: 2rem;
+    background-color: rgb(15, 228, 103);
+}
+
+.aboutAws div:nth-child(2) {
+    width: 50%;
+    height: 2rem;
+    background-color: rgb(15, 228, 103);
+}
+
+
+@media (max-width:1024px) {
+    .aboutInfo {
+        width: 45%;
+    }
+
+    .aboutProgressBar {
+        width: 55%;
+    }
+
+    .aboutImage {
+        width: 10rem;
+    }
+
+    .aboutInfo h2 {
+        padding-top: 0.8rem;
+    }
+
+    .aboutInfo p {
+        max-width: 90%;
+        font-size: 0.8rem;
+        opacity: 0.7;
+        padding: 1rem;
+    }
+
+    .aboutJs div:nth-child(2) {
+        width: 60%;
+    }
+
+    .aboutReact div:nth-child(2) {
+        width: 55%;
+    }
+
+}
+
+@media (max-width:768px) {
+    .aboutRowContainer {
+        flex-wrap: wrap;
+    }
+
+    .aboutRowChild {
+        flex: 50%;
+    }
+
+    .aboutRowChild div {
+        width: 7rem;
+    }
+
+    .aboutRowChild p {
+        font-size: 0.8rem;
+        max-width: 75%;
+    }
+
+    .aboutRowContainer2 {
+        flex-direction: column;
+    }
+
+    .aboutInfo {
+        width: 100%;
+    }
+
+    .aboutProgressBar {
+        width: 100%;
+    }
+
+    .aboutPercentage {
+        padding-left: 3rem;
+    }
+
+    .aboutInfo p {
+        max-width: 80%;
+    }
+}
+
+
+@media (max-width:520px) {
+    .aboutRowContainer2 {
+        padding: 1rem;
+    }
+
+    .aboutPercentage {
+        padding-left: 1rem;
+    }
+
+    .aboutPercentage div:nth-child(1) {
+        padding: 0.65rem;
+        width: 4.5rem;
+        font-size: 0.9rem;
+    }
+}

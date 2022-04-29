@@ -1,0 +1,70 @@
+:root {
+    --primaryColor: "#2ECC71";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.homeSession {
+    height: calc(100vh - 6rem);
+    margin-top: 6rem;
+    text-align: center;
+}
+
+.homeHeader {
+    padding: 2rem;
+}
+
+.homeHeader h1 {
+    padding: 2rem 1rem 1rem;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+
+.homeHeader p {
+    padding: 1rem;
+    word-spacing: 4px;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+}
+
+@media (max-width:1024px) {
+
+    .homeHeader h1 {
+        font-size: 1.8rem;
+    }
+
+    .homeHeader p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width:768px) {
+
+    .homeSession {
+        height: calc(100vh - 5rem);
+        margin-top: 5rem;
+    }
+    .homeHeader {
+        padding: 1rem;
+    }
+    
+    .homeHeader h1 {
+        padding: 1.5rem 1rem 1rem;
+        font-size: 1.2rem;
+    }
+    
+    .homeHeader p {
+        font-size: 0.6rem;
+        word-spacing: 2px;
+        letter-spacing: 1px;
+    }
+}

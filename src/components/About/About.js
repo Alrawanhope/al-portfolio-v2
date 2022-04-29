@@ -1,7 +1,5 @@
 import React from "react";
-import {
-  FaGithub
- } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import {
   aboutWrap,
   aboutTitle,
@@ -18,13 +16,14 @@ import {
   aboutReact,
   aboutNode,
   aboutGatsby,
-  aboutAws
+  aboutAws,
 } from "./About.module.css";
-import logoImage from "../../images/R-logo.png";
+import { GatsbyImage } from "gatsby-plugin-image";
 
-export default function About() {
+export default function About({ sanityAbout }) {
+  console.log("sanityAbout", sanityAbout);
   return (
-    <section style={{marginBottom:"5rem"}}>
+    <section>
       <div className={aboutWrap}>
         <h1 className={aboutTitle}>ABOUT</h1>
         <div className={aboutRowContainer}>
@@ -68,14 +67,14 @@ export default function About() {
         <div className={aboutRowContainer2}>
           <div className={aboutInfo}>
             <div className={aboutImage}>
-              <img src={logoImage} style={{ width: "100%" }} alt="Logo"/>
+              <GatsbyImage
+                image={sanityAbout.image.asset.gatsbyImageData}
+                alt="info-logo"
+              />
+              {/* <img src={logoImage} style={{ width: "100%" }} alt="Logo"/> */}
             </div>
-            <h2>Who's this guy?</h2>
-            <p>
-              I'm a Front-End Developer for ChowNow in Los Angeles, CA. I have
-              serious passion for UI effects, animations and creating intuitive,
-              dynamic user experiences. Let's make something special.
-            </p>
+            <h2>{sanityAbout.info}</h2>
+            <p>{sanityAbout.description}</p>
           </div>
           <div className={aboutProgressBar}>
             <div className={`${aboutPercentage} ${aboutHtml}`}>

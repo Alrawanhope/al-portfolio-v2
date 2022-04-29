@@ -83,7 +83,13 @@ body {
 }
 
 .aboutImage {
-    width: 12rem;
+    display: flex;
+    position: relative;
+    height: 13rem;
+    width:16rem;
+    background-color: #424242;
+    -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
 
 .aboutInfo h2 {
@@ -173,10 +179,6 @@ body {
 
     .aboutProgressBar {
         width: 55%;
-    }
-
-    .aboutImage {
-        width: 10rem;
     }
 
     .aboutInfo h2 {

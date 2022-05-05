@@ -2,7 +2,7 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 import {
   aboutWrap,
-  aboutTitle,
+  aboutHeader,
   aboutRowContainer,
   aboutRowChild,
   aboutRowContainer2,
@@ -16,7 +16,7 @@ import {
   aboutReact,
   aboutNode,
   aboutGatsby,
-  aboutAws,
+  aboutAws
 } from "./About.module.css";
 import { GatsbyImage } from "gatsby-plugin-image";
 
@@ -25,7 +25,10 @@ export default function About({ sanityAbout }) {
   return (
     <section>
       <div className={aboutWrap}>
-        <h1 className={aboutTitle}>ABOUT</h1>
+        <div className={aboutHeader}>
+        <h1>{sanityAbout.title}</h1>
+        <p>{sanityAbout.subTitle}</p>
+      </div>
         <div className={aboutRowContainer}>
           <div className={aboutRowChild}>
             <div>

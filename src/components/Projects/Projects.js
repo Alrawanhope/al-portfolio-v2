@@ -23,9 +23,9 @@ const Projects = ({ sanityProjects }) => {
       <div className={projectList}>
         {sanityProjects &&
           sanityProjects.projectList &&
-          sanityProjects.projectList.map((project) => {
+          sanityProjects.projectList.map((project,i) => {
             return (
-              <div className={projectImageBox}>
+              <div className={projectImageBox} key={i}>
                 <div className={projectOverlay}></div>
                 <img src={project.image.asset.url} alt="test" />
                 <div className={projectHoverTitle}>

@@ -3,6 +3,7 @@ import Layout from "../components/Layout/Layout";
 import Home from "../components/Home/Home";
 import About from "../components/About/About";
 import Projects from "../components/Projects/Projects";
+import Testimonials from "../components/Testimonials/Testimonials";
 import {graphql} from "gatsby"
 
 const IndexPage = ({data}) => {
@@ -12,6 +13,7 @@ const IndexPage = ({data}) => {
       <Home sanityHome={data.sanityHome}/>
       <About sanityAbout={data.sanityAbout}/>
       <Projects sanityProjects={data.sanityProjects}/>
+      <Testimonials sanityTestimonials={data.sanityTestimonials}/>
     </Layout>
   );
 };
@@ -26,6 +28,8 @@ query {
   }
 
   sanityAbout {
+    title
+    subTitle
     info
     description
     image {
@@ -45,6 +49,22 @@ query {
         current
       }
       projectLink
+      image {
+        asset {
+          gatsbyImageData
+          url
+        }
+      }
+    }
+  }
+
+  sanityTestimonials {
+    title
+    description
+    testimonialsList {
+      name
+      from
+      description
       image {
         asset {
           gatsbyImageData

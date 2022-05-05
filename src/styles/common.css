@@ -1,0 +1,9 @@
+
+.carousel .control-dots .dot {
+    width: 0.7rem !important;
+    height: 0.7rem !important;
+}
+
+.carousel .control-dots .dot.selected, .carousel .control-dots .dot:hover {
+    background-color: #2ECC71 !important
+}

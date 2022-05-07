@@ -1,6 +1,6 @@
 export default {
-    name: 'project',
-    title: 'Project',
+    name: 'quote',
+    title: 'Quote',
     type: 'document',
     fields: [
       {
@@ -9,28 +9,9 @@ export default {
         type: 'string',
       },
       {
-        name: 'slug',
-        title: 'Slug',
-        type: 'slug',
-        options: {
-          source: 'title',
-          maxLength: 96,
-        },
-      },
-      {
-        name: 'usedLanguage',
-        title: 'Used Language',
-        type: 'string',
-      },
-      {
         name: 'description',
         title: 'Description',
         type: 'text',
-      },
-      {
-        name: 'projectLink',
-        title: 'Project Link',
-        type: 'url',
       },
       {
         name: 'image',

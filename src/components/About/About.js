@@ -1,7 +1,9 @@
 import React from "react";
-import { FaGithub } from "react-icons/fa";
+import { FaLaptopCode,FaLightbulb } from "react-icons/fa";
+import { MdSpeed } from "react-icons/md";
+import { IoIosRocket } from "react-icons/io";
 import {
-  aboutWrap,
+  aboutContainer,
   aboutHeader,
   aboutRowContainer,
   aboutRowChild,
@@ -23,8 +25,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 export default function About({ sanityAbout }) {
   console.log("sanityAbout", sanityAbout);
   return (
-    <section>
-      <div className={aboutWrap}>
+    <section className={aboutContainer}>
         <div className={aboutHeader}>
         <h1>{sanityAbout.title}</h1>
         <p>{sanityAbout.subTitle}</p>
@@ -32,7 +33,7 @@ export default function About({ sanityAbout }) {
         <div className={aboutRowContainer}>
           <div className={aboutRowChild}>
             <div>
-              <FaGithub style={{ width: "80%", height: "100%" }} />
+              <MdSpeed style={{ width: "80%", height: "100%" }} />
             </div>
             <h2>Fast</h2>
             <p>
@@ -41,29 +42,29 @@ export default function About({ sanityAbout }) {
           </div>
           <div className={aboutRowChild}>
             <div>
-              <FaGithub style={{ width: "80%", height: "100%" }} />
+              <FaLaptopCode style={{ width: "80%", height: "100%" }} />
             </div>
-            <h2>Fast</h2>
+            <h2>Responsive</h2>
             <p>
-              Fast load times and lag free interaction, my highest priority.
+            My layouts will work on any device, big or small.
             </p>
           </div>
           <div className={aboutRowChild}>
             <div>
-              <FaGithub style={{ width: "80%", height: "100%" }} />
+              <FaLightbulb style={{ width: "80%", height: "100%" }} />
             </div>
-            <h2>Fast</h2>
+            <h2>Intuitive</h2>
             <p>
-              Fast load times and lag free interaction, my highest priority.
+            Strong preference for easy to use, intuitive UX/UI.
             </p>
           </div>
           <div className={aboutRowChild}>
             <div>
-              <FaGithub style={{ width: "80%", height: "100%" }} />
+              <IoIosRocket style={{ width: "80%", height: "100%" }} />
             </div>
-            <h2>Fast</h2>
+            <h2>Dynamic</h2>
             <p>
-              Fast load times and lag free interaction, my highest priority.
+            Websites don't have to be static, I love making pages come to life.
             </p>
           </div>
         </div>
@@ -98,17 +99,17 @@ export default function About({ sanityAbout }) {
             <div className={`${aboutPercentage} ${aboutReact}`}>
               <div>REACT</div>
               <div></div>
+              <div>85%</div>
+            </div>
+            <div className={`${aboutPercentage} ${aboutGatsby}`}>
+              <div>GATSBY</div>
+              <div></div>
               <div>80%</div>
             </div>
             <div className={`${aboutPercentage} ${aboutNode}`}>
               <div>NODE</div>
               <div></div>
               <div>70%</div>
-            </div>
-            <div className={`${aboutPercentage} ${aboutGatsby}`}>
-              <div>GATSBY</div>
-              <div></div>
-              <div>80%</div>
             </div>
             <div className={`${aboutPercentage} ${aboutAws}`}>
               <div>AWS</div>
@@ -117,7 +118,6 @@ export default function About({ sanityAbout }) {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 }

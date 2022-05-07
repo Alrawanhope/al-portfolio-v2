@@ -13,10 +13,8 @@ body {
 }
 
 
-.aboutWrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.aboutContainer {
+    padding: 1rem;
 }
 
 .aboutHeader {
@@ -25,7 +23,6 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0.7rem;
 }
 
 .aboutHeader h1 {
@@ -48,8 +45,9 @@ body {
 .aboutRowContainer {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 2rem 10px;
+    justify-content: space-around;
+    padding: 1rem;
+    flex-wrap: wrap;
 }
 
 .aboutRowChild {
@@ -57,38 +55,39 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2rem;
+    text-align: center;
+    padding: 0.5rem;
+    flex: 0 0 20%;
 }
-
 
 .aboutRowChild div {
     background-color: #2ECC71;
-    width: 10rem;
-    text-align: center;
-    padding: 2rem;
+    width: 8rem;
+    padding: 1rem;
+    -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
 
-
 .aboutRowChild h2 {
-    padding: 1rem 0.5rem 0.5rem;
-    opacity: 0.8;
+    padding: 0.5rem;
+    opacity: 0.7;
+    width: 100%;
+    font-size: 1.5rem;
 }
 
 .aboutRowChild p {
-    opacity: 0.8;
-    font-size: 1rem;
-    max-width: 60%;
-    text-align: center;
+    font-size: 0.8rem;
+    max-width: 75%;
+    opacity: 0.7;
+    padding-bottom: 0.5rem;
 }
 
-/* ================== */
 .aboutRowContainer2 {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
     width: 100%;
-    padding: 2rem;
+    padding: 2rem 0.5rem;
 }
 
 .aboutInfo {
@@ -97,36 +96,30 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 50%;
+    width: 45%;
 }
 
 .aboutImage {
     display: flex;
     position: relative;
     height: 13rem;
-    width:16rem;
+    width: 16rem;
+    margin-bottom: 1rem;
     background-color: #424242;
     -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
 
-.aboutInfo h2 {
-    padding-top: 1rem;
-}
-
 .aboutInfo p {
     max-width: 70%;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    word-spacing: 2px;
     opacity: 0.7;
     padding: 1rem;
 }
 
-
-
-/* ================== */
-
 .aboutProgressBar {
-    align-self: flex-start;
     width: 50%;
     padding: 2rem 5px;
 }
@@ -144,17 +137,17 @@ body {
     background-color: black;
     color: white;
     padding: 10px;
-    width: 6rem;
+    width: 7rem;
 }
 
 .aboutHtml div:nth-child(2) {
-    width: 70%;
+    width: 75%;
     height: 2rem;
     background-color: rgb(15, 228, 103);
 }
 
 .aboutCss div:nth-child(2) {
-    width: 70%;
+    width: 75%;
     height: 2rem;
     background-color: rgb(15, 228, 103);
 }
@@ -166,6 +159,13 @@ body {
 }
 
 .aboutReact div:nth-child(2) {
+    width: 65%;
+    height: 2rem;
+    background-color: rgb(15, 228, 103);
+}
+
+
+.aboutGatsby div:nth-child(2) {
     width: 60%;
     height: 2rem;
     background-color: rgb(15, 228, 103);
@@ -173,12 +173,6 @@ body {
 
 .aboutNode div:nth-child(2) {
     width: 50%;
-    height: 2rem;
-    background-color: rgb(15, 228, 103);
-}
-
-.aboutGatsby div:nth-child(2) {
-    width: 60%;
     height: 2rem;
     background-color: rgb(15, 228, 103);
 }
@@ -201,51 +195,10 @@ body {
         letter-spacing: 0.2rem;
         font-size: 1.1rem;
     }
-    .aboutInfo {
-        width: 45%;
-    }
-
-    .aboutProgressBar {
-        width: 55%;
-    }
-
-    .aboutInfo h2 {
-        padding-top: 0.8rem;
-    }
-
-    .aboutInfo p {
-        max-width: 90%;
-        font-size: 0.8rem;
-        opacity: 0.7;
-        padding: 1rem;
-    }
-
-    .aboutJs div:nth-child(2) {
-        width: 60%;
-    }
-
-    .aboutReact div:nth-child(2) {
-        width: 55%;
-    }
-
-}
-
-@media (max-width:768px) {
-    .aboutRowContainer {
-        flex-wrap: wrap;
-    }
 
     .aboutRowChild {
-        flex: 50%;
-    }
-
-    .aboutRowChild div {
-        width: 7rem;
-    }
-
-    .aboutRowChild p {
-        font-size: 0.8rem;
-        max-width: 75%;
+        flex: 0 0 45%;
+        padding: 0.5rem;
     }
 
     .aboutRowContainer2 {
@@ -256,32 +209,84 @@ body {
         width: 100%;
     }
 
-    .aboutProgressBar {
-        width: 100%;
+    .aboutInfo p {
+        max-width: 80%;
     }
 
-    .aboutPercentage {
-        padding-left: 3rem;
+    .aboutProgressBar {
+        width: 100%;
+        padding: 3rem 5px 1rem 3rem;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .aboutRowChild div {
+        width: 6.5rem;
+    }
+
+    .aboutRowChild h2 {
+        font-size: 1rem;
+    }
+
+    .aboutRowChild p {
+        font-size: 0.7rem;
+        max-width: 100%;
     }
 
     .aboutInfo p {
-        max-width: 80%;
+        max-width: 100%;
+    }
+
+    .aboutPercentage div:nth-child(1) {
+        padding: 0.7rem;
+        width: 5rem;
+        font-size: 0.8rem;
     }
 }
 
 
 @media (max-width:520px) {
-    .aboutRowContainer2 {
-        padding: 1rem;
-    }
 
-    .aboutPercentage {
-        padding-left: 1rem;
+    .aboutProgressBar {
+        padding-left: 0.5rem;
     }
 
     .aboutPercentage div:nth-child(1) {
-        padding: 0.65rem;
-        width: 4.5rem;
-        font-size: 0.9rem;
+        padding: 0.7rem;
+        width: 4rem;
+        font-size: 0.7rem;
+    }
+
+    .aboutJs div:nth-child(2) {
+        width: 60%;
+        height: 2rem;
+        background-color: rgb(15, 228, 103);
+    }
+
+    .aboutReact div:nth-child(2) {
+        width: 60%;
+        height: 2rem;
+        background-color: rgb(15, 228, 103);
+    }
+
+
+    .aboutGatsby div:nth-child(2) {
+        width: 55%;
+        height: 2rem;
+        background-color: rgb(15, 228, 103);
+    }
+
+    .aboutNode div:nth-child(2) {
+        width: 45%;
+        height: 2rem;
+        background-color: rgb(15, 228, 103);
+    }
+
+    .aboutAws div:nth-child(2) {
+        width: 45%;
+        height: 2rem;
+        background-color: rgb(15, 228, 103);
     }
 }

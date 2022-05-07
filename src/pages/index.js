@@ -44,6 +44,7 @@ query {
     description
     projectList {
       title
+      usedLanguage
       description
       slug {
         current

@@ -13,6 +13,8 @@ import projects from './projects'
 import project from './project'
 import testimonials from './testimonials'
 import testimonial from './testimonial'
+import quotes from './quotes'
+import quote from './quote'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -30,6 +32,8 @@ export default createSchema({
     project,
     testimonials,
     testimonial,
+    quotes,
+    quote,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

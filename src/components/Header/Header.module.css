@@ -60,7 +60,7 @@ header {
     margin-left: 10px;
 }
 
-.headerContainer li:hover {
+.headerContainer li a:hover {
     transition: 0.4s;
     color: #0FC059;
 }
@@ -70,6 +70,7 @@ header {
     border-radius: 50px;
     border: 1px solid #0FC059;
     color: #0FC059;
+    display: inline-block;
 }
 
 #headerButton a:hover {
@@ -128,10 +129,6 @@ header {
     position: absolute;
     top: 93%;
     left: 0%;
-}
-
-.headerMobile li {
-    margin-bottom: 15px;
 }
 
 .headerMobile hr {

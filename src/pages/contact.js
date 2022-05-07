@@ -49,16 +49,16 @@ const ContactPage = () => {
         </div>
         <div className={contactInput}>
           <div>
-            <label for="name">Name</label>
+            <label htmlFor="name">Name</label>
             <input type="text" id="name" required />
           </div>
           <div>
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
             <input type="text" id="email" required />
           </div>
         </div>
         <div className={contactTextarea}>
-          <label for="message">Message</label>
+          <label htmlFor="message">Message</label>
           <textarea id="message" required />
         </div>
         <div className={contactSubmit}>

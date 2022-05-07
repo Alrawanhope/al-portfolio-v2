@@ -26,8 +26,10 @@ const Testimonials = ({ sanityTestimonials }) => {
           infiniteLoop={true}
           showThumbs={false}
           showStatus={false}
-          autoPlay={false}
-          interval={2500}
+          autoPlay={true}
+          interval={4500}
+          swipeable={false}
+          transitionTime={1200}
         >
           {sanityTestimonials &&
             sanityTestimonials.testimonialsList &&

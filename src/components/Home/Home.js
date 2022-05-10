@@ -10,7 +10,7 @@ import {
 } from "./Home.module.css";
 
 function Model(props) {
-  const { scene } = useGLTF("./modal.glb");
+  const { scene } = useGLTF("https://raw.githubusercontent.com/dwqdaiwenqi/react-3d-viewer/master/site/src/lib/model/DamagedHelmet.gltf");
   return <primitive object={scene} />;
 }
 
@@ -38,7 +38,7 @@ const Home = ({ sanityHome }) => {
         <Canvas>
           <Suspense fallback={<Loader />}>
             <ambientLight />
-            <mesh position={[0, -2.8, 0]} scale={[3, 3, 3]}>
+            <mesh position={[0, 0, 0]} scale={[2, 2, 2]}>
               <Model />
             </mesh>
           </Suspense>

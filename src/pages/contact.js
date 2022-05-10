@@ -1,4 +1,4 @@
-import * as React from "react";
+import React,{useState} from "react";
 import sanityClient from "@sanity/client";
 import LogoImage from "../images/rawanFinal.png";
 import ContactAvatarImg from "../images/contactAvatar.png";
@@ -21,29 +21,31 @@ import {
   closeSuccessPopup
 } from "../styles/contact.module.css";
 
-const client = sanityClient({
-  projectId: process.env.SANITY_PROJECT_ID,
-  dataset: process.env.SANITY_DATASET,
-  apiVersion: "2021-03-25", // use current UTC date - see "specifying API version"!
-  token: process.env.SANITY_EDIT_TOKEN, // or leave blank for unauthenticated usage
-  useCdn: true, // `false` if you want to ensure fresh data
-  ignoreBrowserTokenWarning: true
-});
+// const client = sanityClient({
+//   projectId: process.env.SANITY_PROJECT_ID,
+//   dataset: process.env.SANITY_DATASET,
+//   apiVersion: "2021-03-25", // use current UTC date - see "specifying API version"!
+//   token: process.env.SANITY_EDIT_TOKEN, // or leave blank for unauthenticated usage
+//   useCdn: true, // `false` if you want to ensure fresh data
+//   ignoreBrowserTokenWarning: true
+// });
+
+
 
 const ContactPage = () => {
   console.log("YES", process.env.SANITY_EDIT_TOKEN);
 
-  const [name,setName] = React.useState("")
-  const [email,setEmail] = React.useState("")
-  const [message,setMessage] = React.useState("")
-  const [successMessage,setSuccessMesage] = React.useState(false)
+  const [name,setName] = useState("")
+  const [email,setEmail] = useState("")
+  const [message,setMessage] = useState("")
+  const [successMessage,setSuccessMesage] = useState(false)
 
-  React.useEffect(async () => {
-    const query = "*[_type == 'contact'] { _id, email, message,name } ";
-    await client.fetch(query).then(async (res) => {
-      console.log("FETCHING DATA FROM CLIENT SIDE:", res);
-    });
-  }, []);
+  // React.useEffect(async () => {
+  //   const query = "*[_type == 'contact'] { _id, email, message,name } ";
+  //   await client.fetch(query).then(async (res) => {
+  //     console.log("FETCHING DATA FROM CLIENT SIDE:", res);
+  //   });
+  // }, []);
 
   const clearData = () => {
     setEmail('')
@@ -53,21 +55,21 @@ const ContactPage = () => {
 
   const submitButton = (event) => {
     event.preventDefault();
-    const doc = {
-      _type: 'contact',
-      name:name,
-      email: email,
-      message: message
-    }
+    // const doc = {
+    //   _type: 'contact',
+    //   name:name,
+    //   email: email,
+    //   message: message
+    // }
     
-    client.create(doc).then((res) => {
-      console.log(`Submitted Successfully!!! ${res}`)
-      setEmail('')
-      setName('')
-      setMessage('')
-      setSuccessMesage(true)
-      setTimeout(()=> setSuccessMesage(false),3000)
-    })
+    // client.create(doc).then((res) => {
+    //   console.log(`Submitted Successfully!!! ${res}`)
+    //   setEmail('')
+    //   setName('')
+    //   setMessage('')
+    //   setSuccessMesage(true)
+    //   setTimeout(()=> setSuccessMesage(false),3000)
+    // })
   };
 
   return (

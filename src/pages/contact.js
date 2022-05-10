@@ -34,6 +34,8 @@ import {
 
 const ContactPage = () => {
   console.log("YES", process.env.SANITY_EDIT_TOKEN);
+  console.log("SANITY_PROJECT_ID", process.env.SANITY_PROJECT_ID);
+  console.log("GATSBY_SANITY_PROJECT_ID", process.env.GATSBY_SANITY_PROJECT_ID);
 
   const [name,setName] = useState("")
   const [email,setEmail] = useState("")

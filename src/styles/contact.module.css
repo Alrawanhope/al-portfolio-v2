@@ -148,6 +148,41 @@ body {
     transition: 0.4s;
 }
 
+.successPopup{
+    position: fixed;
+    top: 15%;
+    right: 1%;
+    font-size: 1rem;
+    background-color: #8de9b3;
+    padding: 1rem;
+    border-radius: 4px;
+    border-left: 4px solid #2ECC71;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: show 1s ease forwards;
+}
+
+@keyframes show {
+    0% {
+        transform: translateX(100%);
+    }
+    40% {
+        transform: translateX(-10%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.successPopup span {
+    padding-left: 5px;
+}
+
+.closeSuccessPopup {
+    font-size: 1.2rem;
+}
+
 @media (max-width:768px) {
 
     .contactLogo img {
@@ -187,6 +222,15 @@ body {
         padding: 0.5rem 2.5rem;
         font-size: 1rem;
         margin-top: 0;
+    }
+
+    .successPopup{
+        top: 25%;
+        font-size: 0.6rem;
+        padding: 0.7rem;
+    }
+    .closeSuccessPopup {
+        font-size: 0.8rem;
     }
 
 }

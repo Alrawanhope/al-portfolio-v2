@@ -38,6 +38,27 @@ body {
     opacity: 0.8;
 }
 
+.home3DModel {
+    height: calc(100vh - 6rem - 216px);
+}
+
+
+.homeLoad {
+    height: 5px;
+    width: 200px;
+    background: #eee;
+    border-radius: 5px;
+    margin: 100px;
+}
+
+.homeProgress {
+    position: relative;
+    width: 50px;
+    height: 100%;
+    background: #2ECC71;
+    transition: width 0.2s ease;
+}
+
 @media (max-width:1024px) {
 
     .homeHeader h1 {
@@ -64,5 +85,9 @@ body {
     .homeHeader p {
         word-spacing: 0px;
         letter-spacing: 0px;
+    }
+
+    .home3DModel {
+        height: calc(100vh - 5rem - 216px);
     }
 }

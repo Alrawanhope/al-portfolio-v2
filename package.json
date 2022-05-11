@@ -24,6 +24,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.3.1",
+    "react-image-gallery": "^1.2.8",
     "react-responsive-carousel": "^3.2.23",
     "yarn": "^1.22.18"
   }

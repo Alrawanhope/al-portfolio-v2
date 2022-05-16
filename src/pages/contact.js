@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import sanityClient from "@sanity/client";
 import LogoImage from "../images/rawanFinal.png";
 import ContactAvatarImg from "../images/contactAvatar.png";
@@ -18,7 +18,7 @@ import {
   contactTextarea,
   contactSubmit,
   successPopup,
-  closeSuccessPopup
+  closeSuccessPopup,
 } from "../styles/contact.module.css";
 
 const client = sanityClient({
@@ -27,19 +27,17 @@ const client = sanityClient({
   apiVersion: "2021-03-25", // use current UTC date - see "specifying API version"!
   token: process.env.GATSBY_SANITY_EDIT_TOKEN, // or leave blank for unauthenticated usage
   useCdn: true, // `false` if you want to ensure fresh data
-  ignoreBrowserTokenWarning: true
+  ignoreBrowserTokenWarning: true,
 });
-
-
 
 const ContactPage = () => {
   console.log("GATSBY_SANITY_DATASET", process.env.GATSBY_SANITY_DATASET);
   console.log("GATSBY_SANITY_PROJECT_ID", process.env.GATSBY_SANITY_PROJECT_ID);
 
-  const [name,setName] = useState("")
-  const [email,setEmail] = useState("")
-  const [message,setMessage] = useState("")
-  const [successMessage,setSuccessMesage] = useState(false)
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [successMessage, setSuccessMesage] = useState(false);
 
   // React.useEffect(async () => {
   //   const query = "*[_type == 'contact'] { _id, email, message,name } ";
@@ -49,28 +47,28 @@ const ContactPage = () => {
   // }, []);
 
   const clearData = () => {
-    setEmail('')
-    setName('')
-    setMessage('')
-  }
+    setEmail("");
+    setName("");
+    setMessage("");
+  };
 
   const submitButton = (event) => {
     event.preventDefault();
     const doc = {
-      _type: 'contact',
-      name:name,
+      _type: "contact",
+      name: name,
       email: email,
-      message: message
-    }
-    
+      message: message,
+    };
+
     client.create(doc).then((res) => {
-      console.log(`Submitted Successfully!!! ${res}`)
-      setEmail('')
-      setName('')
-      setMessage('')
-      setSuccessMesage(true)
-      setTimeout(()=> setSuccessMesage(false),3000)
-    })
+      console.log(`Submitted Successfully!!! ${res}`);
+      setEmail("");
+      setName("");
+      setMessage("");
+      setSuccessMesage(true);
+      setTimeout(() => setSuccessMesage(false), 3000);
+    });
   };
 
   return (
@@ -82,7 +80,12 @@ const ContactPage = () => {
           </Link>
         </div>
         <ul className={contactList}>
-          <li onClick={clearData}>
+          <li
+            onClick={clearData}
+            role={"button"}
+            tabIndex={0}
+            onKeyDown={clearData}
+          >
             <MdRefresh />
           </li>
           <li>
@@ -105,25 +108,54 @@ const ContactPage = () => {
         <div className={contactInput}>
           <div>
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" required  value={name} onChange={(e)=>setName(e.target.value)}/>
+            <input
+              type="text"
+              id="name"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
           </div>
           <div>
             <label htmlFor="email">Email</label>
-            <input type="text" id="email" required value={email} onChange={(e)=>setEmail(e.target.value)}/>
+            <input
+              type="text"
+              id="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
         </div>
         <div className={contactTextarea}>
           <label htmlFor="message">Message</label>
-          <textarea id="message" required value={message} onChange={(e)=>setMessage(e.target.value)}/>
+          <textarea
+            id="message"
+            required
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
         </div>
         <div className={contactSubmit}>
           <button type="submit">Submit</button>
         </div>
       </form>
-      {successMessage ? <div className={successPopup}>
-        <span>Success: Form Submitted Successfully.</span>
-        <span onClick={()=>setSuccessMesage(false)} className={closeSuccessPopup}><CgCloseO /></span>
-      </div> : " " }
+      {successMessage ? (
+        <div className={successPopup}>
+          <span>Success: Form Submitted Successfully.</span>
+          <span
+            role={"button"}
+            tabIndex={0}
+            onKeyDown={() => setSuccessMesage(false)}
+            onClick={() => setSuccessMesage(false)}
+            className={closeSuccessPopup}
+          >
+            <CgCloseO />
+          </span>
+        </div>
+      ) : (
+        " "
+      )}
     </section>
   );
 };

@@ -13,5 +13,10 @@ export default {
       title: 'Subtitle',
       type: 'string',
     },
+    {
+      name: 'modal',
+      title: 'Modal',
+      type: 'file',
+    }
   ],
 }

@@ -26,6 +26,7 @@ const Quotes = ({ data }) => {
       };
     });
     setImage(images);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const imageViewer = (i) => {
@@ -51,9 +52,12 @@ const Quotes = ({ data }) => {
               <div
                 className={quoteGalleryPics}
                 key={i}
+                role={"button"}
+                tabIndex={0}
+                onKeyDown={() => imageViewer(i)}
                 onClick={() => imageViewer(i)}
               >
-                <img src={quote.image.asset.url} style={{ width: "100%" }} />
+                <img src={quote.image.asset.url} style={{ width: "100%" }} alt={quote.image.asset.url} />
               </div>
             );
           })}

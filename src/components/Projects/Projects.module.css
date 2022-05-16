@@ -150,28 +150,27 @@ body {
 
 .projectNavbar {
     display: flex;
-    width: 100%;
-    max-width: 55rem;
+    width: max-content;
     margin: 2rem auto;
     background-color: black;
-    align-items: center;
-    justify-content: space-between;
     padding: 1px;
     font-size: 1.1rem;
 }
 
 .projectNavbar div {
+    border: 1px solid black;
     width: 8rem;
     height: 2rem;
-    padding: 0.5rem;
+    padding: 0.2rem;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1rem;
 }
 
 .projectNavbar div:hover,.projectActive {
-    color: black;
+    color: black !important;
     background-color: #2ECC71;
     transition: all 0.4s ease-in-out 0s;
 }
@@ -192,15 +191,6 @@ body {
     .projectListDiv .projectImageBox {
         flex-basis: 45%;
     }
-
-    .projectNavbar {
-        max-width: 40rem;
-    }
-    
-    .projectNavbar div {
-        width: 8rem;
-    }
-
 }
 
 @media (max-width: 768px) {
@@ -213,24 +203,16 @@ body {
         font-size: 0.8rem;
     }
 
-    .projectNavbar {
-        max-width: 35rem;
-    }
-
     .projectNavbar div {
-        width: 5rem;
-        font-size: 0.8rem;
+        width: 6rem;
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 520px) {
 
-    /* .projectListDiv .projectImageBox {
-        height: 15rem;
-    } */
     .projectNavbar div {
-        width: 3.2rem;
-        font-size: 0.6rem;
+        width: 3.5rem;
+        font-size: 0.7rem;
     }
 }
 

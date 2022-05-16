@@ -18,7 +18,8 @@ import {
   aboutReact,
   aboutNode,
   aboutGatsby,
-  aboutAws
+  aboutAws,
+  aboutSanity
 } from "./About.module.css";
 import { GatsbyImage } from "gatsby-plugin-image";
 
@@ -115,6 +116,11 @@ export default function About({ sanityAbout }) {
               <div>AWS</div>
               <div></div>
               <div>70%</div>
+            </div>
+            <div className={`${aboutPercentage} ${aboutSanity}`}>
+              <div>Sanity</div>
+              <div></div>
+              <div>80%</div>
             </div>
           </div>
         </div>

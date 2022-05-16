@@ -26,6 +26,7 @@ const Projects = ({ sanityProjects }) => {
     const filteredUsedLanguage = [...new Set(lang)];
     setUsedLanguage(filteredUsedLanguage);
     setProjectList(sanityProjects.projectList);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const filterProject = (usedLanguage, i) => {

@@ -1,5 +1,5 @@
-import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense,useRef } from "react";
+import { Canvas,useFrame } from "@react-three/fiber";
 import {
   Html,
   useProgress,
@@ -33,6 +33,13 @@ function Loader() {
   );
 }
 
+function Rotate(props) {
+  const ref = useRef()
+  useFrame(() => (ref.current.rotation.y += 0.005))
+  return <group ref={ref} {...props} />
+}
+
+
 const Home = ({ sanityHome }) => {
   console.log("sanityHome", sanityHome);
 
@@ -50,16 +57,18 @@ const Home = ({ sanityHome }) => {
               global={true} // Spin globally or by dragging the model
               cursor={true} // Whether to toggle cursor style on drag
               snap={false} // Snap-back to center (can also be a spring config)
-              speed={2.5} // Speed factor
+              speed={8.5} // Speed factor
               zoom={1} // Zoom factor when half the polar-max is reached
               rotation={[0, 0, 0]} // Default rotation
               polar={[Math.PI / 7.5,Math.PI / 7]} // Vertical limits
               azimuth={[-Infinity, Infinity]} // Horizontal limits
               config={{ mass: 1, tension: 170, friction: 26 }} // Spring config
             >
+            <Rotate>
             <mesh position={[0, -3.5, 0]} scale={[3.5, 3.5, 3.5]}>
               <Model url={sanityHome.modal.asset.url} />
             </mesh>
+            </Rotate>
             </PresentationControls>
           </Suspense>
           {/* <OrbitControls
@@ -72,6 +81,7 @@ const Home = ({ sanityHome }) => {
             minPolarAngle={Math.PI / 2.5}
             maxPolarAngle={Math.PI / 2.5}
           /> */}
+      
         </Canvas>
       </div>
     </section>

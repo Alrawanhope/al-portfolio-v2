@@ -54,9 +54,9 @@ export default function About({ sanityAbout }) {
             <div>
               <FaLightbulb style={{ width: "80%", height: "100%" }} />
             </div>
-            <h2>Intuitive</h2>
+            <h2>Refactoring</h2>
             <p>
-            Strong preference for easy to use, intuitive UX/UI.
+            Strong preference for code refactoring, Without changing its external behavior.
             </p>
           </div>
           <div className={aboutRowChild}>

@@ -44,7 +44,7 @@ body {
 
 .aboutRowContainer {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
     padding: 1rem 0.5rem;
     flex-wrap: wrap;
